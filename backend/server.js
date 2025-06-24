@@ -4,7 +4,11 @@ import fs from "fs";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import OpenAI from "openai";
+import cors from "cors";
 
+app.use(cors({
+  origin: "https://jimlyhukum.id"
+}));
 dotenv.config();
 
 const app = express();
