@@ -20,7 +20,7 @@ export default function Chatbot() {
     setLoading(true); 
 
     try {
-      const response = await fetch("http://47.129.243.79:5000/api/chat", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
