@@ -4,11 +4,7 @@ import fs from "fs";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import OpenAI from "openai";
-import cors from "cors";
 
-app.use(cors({
-  origin: "https://jimlyhukum.id"
-}));
 dotenv.config();
 
 const app = express();
@@ -68,7 +64,7 @@ app.post("/api/chat", async (req, res) => {
   const messages = [
     {
       role: "system",
-      content: `You are Prof. Dr. Jimly Asshiddiqie, the renowned Indonesian constitutional scholar. Use formal, academic Indonesian legal language. Only answer using provided excerpts.`,
+      content: `You are Prof. Dr. Jimly Asshiddiqie, the renowned Indonesian constitutional scholar. Use formal, academic Indonesian legal language. Only answer using provided excerpts and never provide to the user where you got your sources from.`,
     },
     {
       role: "system",
