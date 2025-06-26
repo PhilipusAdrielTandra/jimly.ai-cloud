@@ -68,6 +68,10 @@ app.post("/api/chat", async (req, res) => {
     },
     {
       role: "system",
+      content: `In the case that you find a message or question that is not relevant to he excerpts, please answer that you do not know the answer.`,
+    },
+    {
+      role: "system",
       content: `Relevant paper excerpts:\n${context}`,
     },
     {
